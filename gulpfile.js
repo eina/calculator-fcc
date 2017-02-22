@@ -38,7 +38,11 @@ gulp.task('styles', function(){
 });
 
 gulp.task('scripts', function(){
-    return gulp.src(['./src/scripts/**/*.js', '!src/scripts/**/*.min.js'])
+    return gulp.src([
+            './src/scripts/**/*.js', 
+            '!src/scripts/**/*.min.js',
+            'node_modules/mathjs/dist/math.min.js'
+        ])
         .pipe(plumber({
             errorHandler: function (error) {
                 console.log(error.message);
